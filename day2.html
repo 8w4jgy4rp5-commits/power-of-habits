@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html Lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <title>Day2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+ </head>
+ <body>
+    
+
+    <nav>
+            <a href="index.html">Home </a>
+                <a href="day1.html">Day 1 </a>
+                    <a href="day2.html">Day 2  </a>
+             <a href="day3.html">Day 3</a>
+
+    </nav>
+    <button onclick="changeColor()">Toggle Dark Mode</button>
+
+    <h1>Day 2: Building on the Foundation</h1>
+ <p>This is the second day of my 20-hour journey to learn coding.</p>
+<p><a href="index.html">Back to Home</a></p>
+<img src="スクリーンショット_6-6-2026_19322_127.0.0.1.jpeg" alt="Screenshot Of My Second Website">
+<footer
+    <p>This is my 20-hour learning project. © 2026</p>
+</footer>
+<script>
+  // ページを開いたとき、前に選んだ設定を確認して反映する
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  // ボタンを押したときの動作
+  function changeColor() {
+    document.body.classList.toggle("dark");
+
+    // 今の状態をメモに保存する
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+</script>
+
+ </body>
+</html>

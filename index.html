@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Power of Habits only 20Hours
+			
+		</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="progress.html">Progress</a>
+		</nav>
+		<button onclick="changeColor()">Toggle Dark Mode</button>
+
+
+		<h1>Power of Habits only 20Hours
+
+		</h1>
+		<p>Do you know that anyone can learn anything in just 20 hours?</p>
+	<h2>It all Started with a TED talk</h2>
+		<p>Josh Kaufman gave a talk about how anyone can learn anything in just 20 hours.
+<a href="https://www.youtube.com/watch?v=5MgBikgcWnY">The first 20 hours.</a>
+He said that <strong>anyone can learn anything in just 20 hours</strong>
+		</p>
+<h2>The Power of Small Habits</h2>
+<p>
+  I also read a book called <strong>Atomic Habits</strong> by James Clear.
+  He says that <strong>small habits add up over time</strong>.
+</p>
+
+<blockquote>
+  If you get 1% better every day, you will end up 37 times better after one year.
+</blockquote>
+
+<p>
+  This is exactly what I believe. One hour every day may feel small,
+  but I believe these small steps will add up.
+</p>
+
+
+<h2>But People think, Is it Really True?</h2>	
+<p>
+	That sounds amazing, but here's the question: Seriously, can anyone really learn anything in just 20 hours? I mean, it sounds too good to be true, right? 
+	And I'm not sure either.
+	So, I decided to put it to the test. I wanted to see if I could learn something new in just 20 hours!!
+</p>	
+
+	<h2>My 20 Hours Journey</h2>
+		<p>
+			First, I had to choose something to learn. I wanted to pick something that was <strong>completely new to me</strong>, something I had no prior experience with. After some thought, I decided to learn how to code. 
+			I had always been fascinated by the coding, but I had never actually tried to learn it before. So, I thought it would be the perfect first choice for my 20-hour journey.
+			My first challenge is coding this web site
+</p>
+<p><a href="progress.html">Read from day1</a></p>
+<footer>
+	<p>This is my 20-hour learning project. © 2026</p>
+
+
+</footer>
+
+  <script>
+  // ページを開いたとき、前に選んだ設定を確認して反映する
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  // ボタンを押したときの動作
+  function changeColor() {
+    document.body.classList.toggle("dark");
+
+    // 今の状態をメモに保存する
+    if (document.body.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+</script>
+
+
+
+	</body>
+</html>

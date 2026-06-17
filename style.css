@@ -1,0 +1,86 @@
+body{
+				max-width: 700px;
+				margin: 40px auto;
+				padding:0 20px;
+				font-family: sans-serif;
+				line-height:1.7;
+                    background-color:#e3e4e4;
+}
+img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}                   
+
+.progress-img {
+  max-width: 300px;
+  border: 2px solid #16a085;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+body.dark .progress-img {
+  box-shadow: 0 4px 8px rgba(255,255,255,0.15);
+}
+
+nav {
+  background-color: #2c3e50;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+}
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+button{
+   background-color: #16a085;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #637a11;
+}
+body.dark{
+  background-color:#1a1a1a;
+  color:#f0f0f0;
+}
+blockquote {
+  border-left: 4px solid #16a085;
+  padding-left: 15px;
+  margin-left: 0;
+  color: #555555;
+  font-style: italic;
+
+}
+body.dark nav {
+  background-color: #000000;
+}
+
+body.dark a {
+  color: #6db3f2;
+}
+
+body.dark blockquote {
+  color: #cccccc;
+}
+
+body.dark footer {
+  color: #aaaaaa;
+}
+
+
+
