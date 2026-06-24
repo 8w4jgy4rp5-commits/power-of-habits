@@ -1,16 +1,64 @@
 body{
-				max-width: 700px;
-				margin: 40px auto;
-				padding:0 20px;
-				font-family: sans-serif;
-				line-height:1.7;
-                    background-color:#e3e4e4;
+    max-width: 700px;
+    margin: 40px auto;
+    padding:0 20px;
+    font-family: sans-serif;
+    line-height:1.7;
+    background-color: #e3e4e4;
+
 }
+
 img {
   max-width: 100%;
   border: 1px solid #ccc;
   border-radius: 8px;
 }                   
+h2 {
+  border-bottom: 2px solid #16a085;
+  padding-bottom: 6px;
+}
+a {
+  transition: color 0.3s;
+}
+a:hover {
+  color: #1abc9c;
+}
+html {
+  scroll-behavior: smooth;
+}
+.video-link {
+  position: relative;        /* 中に重ねるものの基準にする */
+  display: inline-block;     /* リンクを画像の大きさに合わせる */
+  max-width: 400px;
+}
+
+.video-thumb {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.play-button {
+  position: absolute;        /* 画像の上に自由に配置 */
+  top: 50%;                  /* 縦の中央 */
+  left: 50%;                 /* 横の中央 */
+  transform: translate(-50%, -50%);  /* ピッタリ中央にずらす */
+  font-size: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);  /* 半透明の黒い丸 */
+  border-radius: 50%;        /* 丸くする */
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;  /* ホバーで滑らかに変化 */
+}
+
+.video-link:hover .play-button {
+  background-color: rgba(255, 0, 0, 0.8);  /* マウスを乗せると赤く */
+}
+
 
 .progress-img {
   max-width: 300px;
@@ -20,6 +68,13 @@ img {
 }
 body.dark .progress-img {
   box-shadow: 0 4px 8px rgba(255,255,255,0.15);
+}
+
+.progress-img {
+  transition: transform 0.3s;
+}
+.progress-img:hover {
+  transform: scale(1.05);
 }
 
 nav {
@@ -55,9 +110,12 @@ button:hover {
   background-color: #637a11;
 }
 body.dark{
-  background-color:#1a1a1a;
+  background: linear-gradient(-45deg, #16a085, #1a1a1a, #2c3e50, #1a1a1a);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
   color:#f0f0f0;
 }
+
 blockquote {
   border-left: 4px solid #16a085;
   padding-left: 15px;
@@ -80,6 +138,21 @@ body.dark blockquote {
 
 body.dark footer {
   color: #aaaaaa;
+}
+@keyframes gradientMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.image-pair {
+  display: flex;
+  gap: 10px;
+}
+
+.image-pair .progress-img {
+  width: 48%;
+  max-width: 48%;
 }
 
 
