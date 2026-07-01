@@ -3,7 +3,8 @@ body{
     margin: 40px auto;
     padding:0 20px;
     font-family: sans-serif;
-    line-height:1.7;
+    font-size: 17px;        /* ← 追加：本文の文字サイズ */
+    line-height:1.8;        /* ← 1.7 から 1.8 に変更：行間を広げる */
     background-color: #e3e4e4;
 
 }
@@ -62,7 +63,6 @@ html {
 
 .progress-img {
   max-width: 300px;
-  border: 2px solid #16a085;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -114,7 +114,10 @@ body.dark{
   background-size: 400% 400%;
   animation: gradientMove 15s ease infinite;
   color:#f0f0f0;
+  
+
 }
+
 
 blockquote {
   border-left: 4px solid #16a085;
@@ -154,6 +157,154 @@ body.dark footer {
   width: 48%;
   max-width: 48%;
 }
+#progress-bar {
+  position: fixed;       /* 画面に固定して、スクロールしても動かない */
+  top: 0;
+  left: 0;
+  height: 5px;           /* バーの太さ */
+  width: 0%;             /* 最初は幅0（読み始めは何もない状態） */
+  background-color: #16a085;  /* あなたのテーマカラーの緑 */
+  z-index: 9999;         /* 他の要素より手前に表示 */
+}
+#top-button {
+  position: fixed;        /* 画面に固定。スクロールしても動かない */
+  bottom: 30px;           /* 画面の下から30px */
+  right: 30px;            /* 画面の右から30px */
+  display: none;          /* 最初は隠しておく */
+  z-index: 9999;          /* 一番手前に表示 */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;     /* 丸いボタンにする */
+  font-size: 18px;
+}
 
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;   
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #16a085, #2c3e50);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+
+.hero h1 {
+   font-size: clamp(40px, 8vw, 80px);
+  margin-bottom: 10px;
+  color: #ffffff;
+  animation: fadeIn 1s ease-out;
+}
+.hero-subtitle {
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+.hero-button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #16a085;
+  color: white;
+  text-decoration: none;           /* リンクの下線を消す */
+  border-radius: 8px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #117a65;
+}
+body.dark .hero-subtitle {
+  color: #cccccc;
+}
+.hero-button {
+  color: white !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  animation: fadeIn 1s ease-out 0.3s;   /* 0.3秒遅れて開始 */
+  animation-fill-mode: backwards;        /* 開始前は透明のまま待つ */
+}
+.hero-button {
+  animation: fadeIn 1s ease-out 0.6s;   /* 0.6秒遅れて開始 */
+  animation-fill-mode: backwards;
+}
+/* 最初は透明で少し下にいる状態 */
+.fade-target {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 画面に入ったら表示される状態 */
+.fade-target.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+    background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+ border-left: 5px solid #2c503d;   /* 緑→濃紺に変更。文字の緑と区別がつく */
+  margin-bottom: 40px;   /* 30px → 40px に増やして間隔を広げる */
+
+
+}
+.card p {
+  color: #333333;
+  margin-bottom: 15px;  
+}
+.card strong {
+  color: #16a085;
+   font-size: 1.05em;       /* ← 少しだけ大きく */
+  letter-spacing: 0.5px;   /* ← 文字の間隔を少し空けて引き締める */
+}
+body.dark .card p {
+  color: #f0f0f0;
+}
+body.dark .card {
+  background-color: #2c3e50;
+}
+body.dark .card p {
+  color: #f0f0f0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.card h2 {
+  color: #16a085;
+  font-size: 26px;
+  border-bottom: none;
+  margin-top: 0;
+    margin-bottom: 15px;     /* ← 追加：見出しと本文の間に余白 */
+}
+.result-pair {
+  gap: 20px;
+}
+.result-pair .progress-img {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 
 
